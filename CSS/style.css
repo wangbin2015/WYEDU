@@ -1,17 +1,37 @@
-div{
+body,div{
 	padding: 0;
 	margin: 0;
 }
+/*小黄条部分样式设置*/
 #remind{
+	display: flex;
 	height: 36px;
 	width: 100%;
 	border: 1px solid;
+	background-color: #f3f3f3;
+	align-items: center;
 }
+#remind .p1{
+	display: inline-block;
+	font: 13px '微软雅黑';
+	margin-left:207px;
+}
+#remind .view{
+	font: 13px '微软雅黑';
+}
+#remind .close{
+	display: inline-block;	
+	font: 13px '微软雅黑';
+	margin-left:670px;	
+}
+
+/*banner部分样式设置*/
 .nav{
 	height: 90px;
 	width:100%;
 	border: 1px solid;
 }
+/*轮播部分样式设置*/
 .scroll{
 	height: 462px;
 	width: 100%;
