@@ -1,4 +1,4 @@
-body,div{
+body,div,ul{
 	padding: 0;
 	margin: 0;
 }
@@ -13,23 +13,56 @@ body,div{
 }
 #remind .p1{
 	display: inline-block;
-	font: 13px '微软雅黑';
+	font: 12px '微软雅黑';
 	margin-left:207px;
 }
 #remind .view{
-	font: 13px '微软雅黑';
+	font: 12px '微软雅黑';
 }
 #remind .close{
 	display: inline-block;	
-	font: 13px '微软雅黑';
+	font: 12px '微软雅黑';
 	margin-left:670px;	
 }
 
 /*banner部分样式设置*/
 .nav{
+	display: flex;
 	height: 90px;
 	width:100%;
 	border: 1px solid;
+	align-items: center;
+}
+#banner li{
+	display: inline-block;
+}
+#banner .EDU{
+	display: flex;
+	align-items: center;
+	margin-right: 31px;
+	margin-left: 208px;
+}
+#banner .follow{
+	display: flex;
+	height: 23px;
+	width: 56px;
+	background-color: #2fb556;
+	font:bold 12px '宋体';
+	color: white;
+	justify-content: center;
+	align-items: center;
+}
+#banner .fans{
+	margin-left: 14px;
+	margin-right:418px;
+	font: 12px '宋体';
+}
+#banner .nav .link{
+	font-size: 16px;
+	margin-right: 55px;
+}
+#banner .nav .link1{
+	margin-right: 30px;
 }
 /*轮播部分样式设置*/
 .scroll{
