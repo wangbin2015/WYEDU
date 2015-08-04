@@ -1,0 +1,40 @@
+div{
+	padding: 0;
+	margin: 0;
+}
+#remind{
+	height: 36px;
+	width: 100%;
+	border: 1px solid;
+}
+.nav{
+	height: 90px;
+	width:100%;
+	border: 1px solid;
+}
+.scroll{
+	height: 462px;
+	width: 100%;
+	border: 1px solid;
+}
+.friendlink{
+	height: 297px;
+	width: 100%;
+	border: 1px solid;
+}
+#environment{
+	height: 222px;
+	width: 100%;
+	border: 1px solid;
+}
+#courses{
+	height: 1471px;
+	width: 74.75%;
+	margin: 0 auto;
+	border: 1px solid;	
+}
+#footer{
+	height: 258px;
+	width: 100%;
+	border: 1px solid;
+}
