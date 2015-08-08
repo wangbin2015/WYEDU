@@ -16,6 +16,9 @@ body,div,ul,li{
 	background-color: #f3f3f3;
 	align-items: center;
 }
+#killremind{
+	display: none;
+}
 #remind .p1{
 	display: inline-block;
 	font: 12px '微软雅黑';
@@ -39,7 +42,7 @@ body,div,ul,li{
 	display: flex;
 	height: 90px;
 	width:100%;
-	/*border: 1px solid;*/
+	border: 1px solid red;
 	align-items: center;
 }
 #banner li{
@@ -82,14 +85,20 @@ body,div,ul,li{
 	width: 100%;
 	/*border: 1px solid;*/
 }
+#banner .scroll .list{
+	position: relative;
+}
 #banner .scroll .list a{
 	position:absolute;
-	top:126px;
+	top:0;
 	left:0;
+}
+#banner .scroll .count_parent{
+	position: relative;
 }
 #banner .scroll .count{
 	position:absolute;
-	top:555px;
+	top:420px;
 	left: 50%;
 	transform: translateX(-50%);
 }

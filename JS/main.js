@@ -3,6 +3,8 @@
 // 2、cookie函数：CookieUtil()
 window.onload = function (){
 	scrollFunc();
+	killRemind.remove();
+	killRemind.never();
 }
 // cookie函数
 var CookieUtil={
@@ -14,7 +16,6 @@ var CookieUtil={
 			cookie+='; expires'+'='+oDate;
 		}
 		document.cookie=cookie;
-		alert('hi');
 	},
 	get:function(){
 		var cookie={};
@@ -35,7 +36,27 @@ var CookieUtil={
 	}
 }
 //消灭顶部小黄条
-
+var killRemind={
+	remove:function(){
+		var close=document.getElementsByClassName('close')[0];
+		if (close.addEventListener) {
+			close.addEventListener('click',this.handler,false)
+		}else{
+			close.attachEvent('onclick',this.handler);
+		}
+	},
+	handler:function(){
+		var remind=document.getElementById('remind');
+		CookieUtil.set('name','killRemind',10);
+		remind.setAttribute('id','killremind');
+	},
+	never:function(){
+		if (CookieUtil.get('name')=='killRemind') {
+			remind.setAttribute('id','killremind');
+		};
+	}
+	// var view=document.getElementsByClassName('view')[0];
+}
 
 
 // **********轮播幻灯片函数***********
