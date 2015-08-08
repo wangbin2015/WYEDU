@@ -1,5 +1,45 @@
-window.onload = function ()
-{
+// 函数说明：
+// 1、轮播幻灯片函数：scrollFunc()
+// 2、cookie函数：CookieUtil()
+window.onload = function (){
+	scrollFunc();
+}
+// cookie函数
+var CookieUtil={
+	set:function(name,value,expires){
+		var cookie=encodeURIComponent(name)+'='+encodeURIComponent(value);
+		var oDate=new Date;
+		oDate.setDate(oDate.getDate()+expires);
+		if (expires) {
+			cookie+='; expires'+'='+oDate;
+		}
+		document.cookie=cookie;
+		alert('hi');
+	},
+	get:function(){
+		var cookie={};
+		var all=document.cookie;
+		if (all=='') {
+			return cookie;
+		};
+		var list=all.split('; ')
+		for (var i = 0; i < list.length; i++) {
+			var item=list[i].split('=');
+			if (decodeURIComponent(item[0])==arguments[0]) {
+				return decodeURIComponent(item[1]);
+			};
+		};
+	},
+	remove:function(name,value,expires){
+		this.set(name,'',new Date(0));
+	}
+}
+//消灭顶部小黄条
+
+
+
+// **********轮播幻灯片函数***********
+function scrollFunc(){
 	var scroll = document.getElementsByClassName("scroll")[0];
 	var oList = document.getElementsByClassName("list");
 	var oCount = document.getElementsByClassName("count");	

@@ -23,11 +23,13 @@ body,div,ul,li{
 }
 #remind .view{
 	font: 12px '微软雅黑';
+	cursor:pointer;  
 }
 #remind .close{
 	display: inline-block;	
 	font: 12px '微软雅黑';
 	margin-left:670px;	
+	cursor:pointer;  
 }
 
 /*banner部分样式设置*/
@@ -48,6 +50,7 @@ body,div,ul,li{
 	align-items: center;
 	margin-right: 31px;
 	margin-left: 208px;
+	cursor:pointer;  
 }
 #banner .follow{
 	display: flex;
@@ -57,6 +60,7 @@ body,div,ul,li{
 	color: white;
 	justify-content: center;
 	align-items: center;
+	cursor:pointer;  
 }
 #banner .fans{
 	margin-left: 14px;
@@ -66,9 +70,11 @@ body,div,ul,li{
 #banner .nav .link{
 	font-size: 16px;
 	margin-right: 55px;
+	cursor:pointer;  
 }
 #banner .nav .link1{
 	margin-right: 30px;
+	cursor:pointer;  
 }
 /*轮播部分样式设置*/
 .scroll{
@@ -144,6 +150,7 @@ body,div,ul,li{
 #banner .friendlink .p3{
 	font: 14px '微软雅黑';
 	color: #39a030;
+	cursor:pointer;  
 }
 #banner .friendlink .left{
 	margin-top: 35px;
