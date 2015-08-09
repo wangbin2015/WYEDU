@@ -5,7 +5,21 @@ window.onload = function (){
 	scrollFunc();
 	killRemind.remove();
 	killRemind.never();
+	md5();
 }
+//登录框Md5加密
+function md5(){  
+	var userName=document.getElementsByName('userName')[0];
+	var password=document.getElementsByName('password')[0];
+	var login=document.getElementsByName('login')[0];
+	login.onclick=function(){
+		userName.value=hex_md5(userName.value);
+		password.value=hex_md5(password.value);  
+		if(1){alert("hiiii");}
+	}
+}  
+
+
 // cookie函数
 var CookieUtil={
 	set:function(name,value,expires){
