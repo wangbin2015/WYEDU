@@ -231,12 +231,31 @@ body,div,ul,li,p{
 	border: 1px solid;
 }
 /*课程列表样式*/
+#courses .left .tab a{
+	display: table-cell;
+	width: 200px;
+	height: 50px;
+	box-shadow: 1px 1px 0 0.5px #e6e6e6;
+	text-align: center;
+	vertical-align: middle;
+}
+#courses .left .tab .tabA{
+	background-color: #39a030;
+	color: white;
+}
+#courses .left .tab{
+	margin-bottom: 30px;
+}
 #courses .left .list li{
 	float: left;
 	width: 220px;
 	height: 232px;
 	margin:0 22px 20px 0;
 	box-shadow: 1px 1px 0 0.5px #e6e6e6;
+}
+#courses .left .list li img{
+	width: 223px;
+	height: 124px;
 }
 #courses .left .list li:first-child{
 	white-space: nowrap;
@@ -267,9 +286,17 @@ body,div,ul,li,p{
 }
 #courses .left #page li{
 	display: inline-block;
+	width: 21px;
+	height: 21px;
+	border: 1px solid;
+}
+#courses .left #page li:hover{
+	background-color: #9dd8b1;
 }
 #courses .left .page a{
+	border: 1px solid;
 	float: right;
+	margin:30px 20px;
 }
 /*页脚样式设置*/
 #footer{

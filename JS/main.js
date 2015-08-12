@@ -6,7 +6,7 @@ window.onload = function (){
 	killRemind.remove();
 	killRemind.never();
 	md5();
-	ajax(1, 20, 10);
+	ajax(1, 20, 20);
 }
 //登录框Md5加密
 function md5(){  
