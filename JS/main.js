@@ -23,6 +23,7 @@ function md5(){
    function ajax(pageNo, psize, type) {
         var xml = new XMLHttpRequest;
         var listA = document.getElementById('listA');
+        var page=document.getElementById('page');
         var url = 'http://study.163.com/webDev/couresByCategory.htm';
         xml.open('GET', url + '?pageNo=' + pageNo + '&psize=' + psize + '&type=' + type);
         xml.send();
@@ -33,11 +34,16 @@ function md5(){
                         var oli = document.createElement('li');
                         var json = JSON.parse(xml.responseText);
                         oli.innerHTML = '<li><img src="' + json.list[i]['middlePhotoUrl']+'"/>' 
-                        +'<p>'+json.list[i]['name']+'</p>'
-                        +'<p>'+json.list[i]['provider']+'</p>'
-						+'<p style="background:url(/images/li_bg.png)">'+json.list[i]['learnerCount']+'</p>'
-						+'<p style="color:red;">'+'￥'+json.list[i]['price']+'</p></li>';
+                        +'<p>'+'&nbsp;'+json.list[i]['name']+'&nbsp;'+'</p>'
+                        +'<p>'+'&nbsp;'+json.list[i]['provider']+'&nbsp;'+'</p>'
+						+'<p>'+'&nbsp;'+'&nbsp;'+'&nbsp;'+json.list[i]['learnerCount']+'&nbsp;'+'</p>'
+						+'<p>'+'&nbsp;'+'￥'+json.list[i]['price']+'</p></li>';
                         listA.appendChild(oli);
+                    };
+                    for (var j = 1; j < 9; j++) {
+                    	var pli = document.createElement('li');
+                    	pli.innerHTML='<a href="javascript:">'+j+'</a>';
+                    	page.appendChild(pli);
                     };
                 };
             };
