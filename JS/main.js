@@ -6,7 +6,7 @@ window.onload = function (){
 	killRemind.remove();
 	killRemind.never();
 	md5();
-	ajax(1, 20, 20);
+	changetype();
 }
 //登录框Md5加密
 function md5(){  
@@ -22,7 +22,7 @@ function md5(){
 //获取课程AJAX
    function ajax(pageNo, psize, type) {
         var xml = new XMLHttpRequest;
-        var listA = document.getElementById('listA');
+        listA = document.getElementById('listA');
         var page=document.getElementById('page');
         var url = 'http://study.163.com/webDev/couresByCategory.htm';
         xml.open('GET', url + '?pageNo=' + pageNo + '&psize=' + psize + '&type=' + type);
@@ -49,7 +49,51 @@ function md5(){
             };
         }
     }
-   
+ // 切换课程类型函数
+ function changetype(){
+ 	ajax(1, 20, 10);
+ 	var	tabA=document.getElementsByClassName('tabA')[0];
+ 	var tabB=document.getElementsByClassName('tabB');
+ 	tabA.onclick=function(){
+ 		listA.innerHTML=null;
+ 		page.innerHTML=null;
+		return ajax(1, 20, 10);
+ 	}
+ 	tabB[0].onclick=function(){
+ 		listA.innerHTML=null;
+ 		page.innerHTML=null;
+ 		return ajax(1, 20, 20);
+ 	}
+ }
+//视频介绍获取
+function getMp4(){
+	var xml = new XMLHttpRequest;
+        var mp4 = document.getElementsByClassName('mp4');
+        var url = 'http://mov.bn.netease.com/open-movie/nos/mp4/2014/12/30/SADQ86F5S_shd.mp4';
+        xml.open('GET', url);
+        xml.send();
+        xml.onreadystatechange = function() {
+            if (xml.readyState == 4) {
+                if (xml.status == 200) {
+                    for (var i = 0; i < psize; i++) {
+                        var oli = document.createElement('li');
+                        var json = JSON.parse(xml.responseText);
+                        oli.innerHTML = '<li><img src="' + json.list[i]['middlePhotoUrl']+'"/>' 
+                        +'<p>'+'&nbsp;'+json.list[i]['name']+'&nbsp;'+'</p>'
+                        +'<p>'+'&nbsp;'+json.list[i]['provider']+'&nbsp;'+'</p>'
+						+'<p>'+'&nbsp;'+'&nbsp;'+'&nbsp;'+json.list[i]['learnerCount']+'&nbsp;'+'</p>'
+						+'<p>'+'&nbsp;'+'￥'+json.list[i]['price']+'</p></li>';
+                        listA.appendChild(oli);
+                    };
+                    for (var j = 1; j < 9; j++) {
+                    	var pli = document.createElement('li');
+                    	pli.innerHTML='<a href="javascript:">'+j+'</a>';
+                    	page.appendChild(pli);
+                    };
+                };
+            };
+        }
+    }
 // cookie函数
 var CookieUtil={
 	set:function(name,value,expires){

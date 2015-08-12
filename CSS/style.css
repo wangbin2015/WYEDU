@@ -3,6 +3,7 @@ body,div,ul,li,p{
 	margin: 0;
 	list-style:none;
 }
+a { text-decoration: none; }
 /*小黄条部分样式设置*/
 #remind{
 	overflow: hidden;
@@ -212,7 +213,7 @@ body,div,ul,li,p{
 }
 #courses{
 	height: 1471px;
-	width: 74.75%;
+	width: 1210px;
 	margin: 0 auto;
 	border: 1px solid;	
 	margin-top: 83px;
@@ -220,13 +221,13 @@ body,div,ul,li,p{
 }
 #courses .left{
 	float: left;
-	width: 82%;
+	width: 980px;
 	height: 100%;
 	border: 1px solid;
 }
 #courses .right{
 	float: right;
-	width: 18.57379768%;
+	width: 226px;
 	height: 100%;
 	border: 1px solid;
 }
@@ -294,10 +295,14 @@ body,div,ul,li,p{
 	background-color: #9dd8b1;
 }
 #courses .left .page a{
-	border: 1px solid;
+	border:blue 1px solid;
 	float: right;
-	margin:30px 20px;
 }
+#courses .left .list{
+	height: 1270px;
+}
+/*结构介绍样式*/
+
 /*页脚样式设置*/
 #footer{
 	position: relative;
