@@ -6,6 +6,7 @@ window.onload = function (){
 	killRemind.remove();
 	killRemind.never();
 	md5();
+	ajax(1, 20, 10);
 }
 //登录框Md5加密
 function md5(){  
@@ -18,8 +19,31 @@ function md5(){
 		if(1){alert("hiiii");}
 	}
 }  
-
-
+//获取课程AJAX
+   function ajax(pageNo, psize, type) {
+        var xml = new XMLHttpRequest;
+        var listA = document.getElementById('listA');
+        var url = 'http://study.163.com/webDev/couresByCategory.htm';
+        xml.open('GET', url + '?pageNo=' + pageNo + '&psize=' + psize + '&type=' + type);
+        xml.send();
+        xml.onreadystatechange = function() {
+            if (xml.readyState == 4) {
+                if (xml.status == 200) {
+                    for (var i = 0; i < psize; i++) {
+                        var oli = document.createElement('li');
+                        var json = JSON.parse(xml.responseText);
+                        oli.innerHTML = '<li><img src="' + json.list[i]['middlePhotoUrl']+'"/>' 
+                        +'<p>'+json.list[i]['name']+'</p>'
+                        +'<p>'+json.list[i]['provider']+'</p>'
+						+'<p style="background:url(/images/li_bg.png)">'+json.list[i]['learnerCount']+'</p>'
+						+'<p style="color:red;">'+'￥'+json.list[i]['price']+'</p></li>';
+                        listA.appendChild(oli);
+                    };
+                };
+            };
+        }
+    }
+   
 // cookie函数
 var CookieUtil={
 	set:function(name,value,expires){
