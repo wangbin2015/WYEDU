@@ -1,4 +1,4 @@
-body,div,ul,li,p{
+body,div,ul,li,p,h3{
 	padding: 0;
 	margin: 0;
 	list-style:none;
@@ -236,7 +236,7 @@ a { text-decoration: none; }
 	display: table-cell;
 	width: 200px;
 	height: 50px;
-	box-shadow: 1px 1px 0 0.5px #e6e6e6;
+	box-shadow: 1px 1px 0 1px #e6e6e6;
 	text-align: center;
 	vertical-align: middle;
 }
@@ -252,7 +252,7 @@ a { text-decoration: none; }
 	width: 220px;
 	height: 232px;
 	margin:0 22px 20px 0;
-	box-shadow: 1px 1px 0 0.5px #e6e6e6;
+	box-shadow: 1px 1px 0 1px #e6e6e6;
 }
 #courses .left .list li img{
 	width: 223px;
@@ -301,8 +301,31 @@ a { text-decoration: none; }
 #courses .left .list{
 	height: 1270px;
 }
-/*结构介绍样式*/
-
+/*机构介绍样式*/
+#courses .right .retroduce{
+	box-shadow: 1px 1px 0 1px #e6e6e6;
+	margin-bottom: 20px;
+}
+#courses .right .retroduce h3{
+	height: 57px;
+	box-shadow: 1px 1px 0 1px #e6e6e6;
+	font: 16px '微软雅黑';
+	line-height: 55px;
+}
+#courses .right .retroduce .mp4 p{
+	font: 14px '微软雅黑';
+	margin: 22px 0 9px;
+}
+#courses .right .retroduce .mp4 img{
+	width: 182px;
+	height: 112px;
+	margin-left: 22px;
+	margin-bottom: 21px;
+}
+/*热门排行样式*/
+#courses .right #charts{
+	box-shadow: 1px 1px 0 1px #e6e6e6;
+}
 /*页脚样式设置*/
 #footer{
 	position: relative;
