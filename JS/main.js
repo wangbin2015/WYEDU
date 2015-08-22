@@ -12,19 +12,24 @@ window.onload = function() {
 function md5() {
 	var userName = document.getElementsByName('userName')[0];
 	var password = document.getElementsByName('password')[0];
-	var login = document.getElementsByName('login')[0];
-	login.onclick = function() {
+	var logoin = document.getElementsByClassName('logoin')[0];
+	logoin.onclick = function() {
 		userName.value = hex_md5(userName.value);
 		password.value = hex_md5(password.value);
 		if (1) {
-			alert("hiiii");
+			// alert("hiiii");
 		}
 	}
 }
 
 // 封装Ajax
 function ajax(url, options) {
-	xhr = new XMLHttpRequest;
+	if (window.XMLHttpRequest) {
+		xhr = new XMLHttpRequest;
+	}else{
+		xhr=new ActiveXObject('Microsoft.XMLHTTP');
+	}
+	
 	xhr.open('GET', url);
 	xhr.send();
 	xhr.onreadystatechange = function() {
@@ -36,7 +41,7 @@ function ajax(url, options) {
 	}
 }
 //获取课程列表函数
-var getCourse = function(pageNo, psize, type) {
+function getCourse(pageNo, psize, type) {
 	var ajaxOnsuccess = function() {
 		listA = document.getElementById('listA');
 		page = document.getElementById('page');
@@ -61,7 +66,7 @@ var getCourse = function(pageNo, psize, type) {
 	ajax(URL, options);
 };
 //tab改变课程类型
-var tabCourse = function() {
+function tabCourse() {
 		pageNo = 1;
 		psize = 20;
 		type = 20;
@@ -94,17 +99,22 @@ var tabCourse = function() {
 	//最热排行获取
 var getCharts = (function() {
 	var url = 'http://study.163.com/webDev/hotcouresByCategory.htm';
-	xhr1 = new XMLHttpRequest;
+	if (window.XMLHttpRequest) {
+		xhr1 = new XMLHttpRequest;
+	}else{
+		xhr1=new ActiveXObject('Microsoft.XMLHTTP');
+	}
+	
 	xhr1.open('GET', url);
 	xhr1.send();
 	xhr1.onreadystatechange = function() {
 		if (xhr1.readyState == 4) {
 			if (xhr1.status == 200) {
 				for (var i = 0; i < 10; i++) {
-					charts = document.getElementById('charts');
+					var charts = document.getElementById('charts');
 					var cli = document.createElement('li');
 					var rank = JSON.parse(xhr1.responseText);
-					cli.innerHTML = '<li><img src="' + rank[i]['smallPhotoUrl'] + '"/>' + '<p>' + rank[i]['name'] + '</p>' + '<p>' + rank[i]['learnerCount'] + '</p>' + '</p></li>';
+					cli.innerHTML = '<img src="' + rank[i]['smallPhotoUrl'] + '"/>' + '<p>' + rank[i]['name'] + '</p>' + '<div><p>' + '&nbsp;'+rank[i]['learnerCount'] + '</p></div>';
 					charts.appendChild(cli);
 				}
 
@@ -222,3 +232,12 @@ function scrollFunc() {
 		}, 20);
 	}
 };
+//遮罩效果
+function showdiv() {            
+            document.getElementById("bg").style.display ="block";
+            document.getElementById("show").style.display ="block";
+        }
+function hidediv() {
+            document.getElementById("bg").style.display ='none';
+            document.getElementById("show").style.display ='none';
+        }
